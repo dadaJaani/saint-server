@@ -51,6 +51,7 @@ var createUser = function(req, res){
 // FUNCTION TO EDIT USER
 var editUser = function(req, res){
     var userId = req.params.id;
+
     var userUpdate = {
         "password":req.body.password,
         "email":req.body.email,
@@ -58,10 +59,10 @@ var editUser = function(req, res){
         "lname":req.body.lname,
         "points":req.body.points,
         "photo":req.body.photo,
-        "dob": '',
-        "medicalHistory": [],
-        "medicalId": '',
-        "insuranceId": '',
+        "dob": req.body.dob,
+        "medicalHistory": req.body.medicalHistory,
+        "medicalId": req.body.medicalId,
+        "insuranceId": req.body.insuranceId,
     };
 
     Users.updateOne({ id: userId }, userUpdate, function(err, updatedUser) {
@@ -149,4 +150,3 @@ module.exports.getUserData        = getUserData;
 module.exports.deleteUser         = deleteUser;
 module.exports.validateUserID     = validateUserID;
 module.exports.loginUser          = loginUser;
-module.exports.getRewardsForUsers = getRewardsForUsers;

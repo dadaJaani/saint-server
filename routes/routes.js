@@ -2,9 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 var UserController = require('../controllers/UserController.js');
-var restaurant_controller = require('../controllers/restaurant_controller.js');
-var reward_controller = require('../controllers/reward_controller.js');
-var sale_controller = require('../controllers/sale_controller.js');
+var AlertController = require('../controllers/AlertController.js');
+var MedicController = require('../controllers/MedicController.js');
 
 // Get the index page
 router.get('/', function(req, res, next) {
@@ -27,7 +26,7 @@ router.post('/user/login/:id', UserController.loginUser);
 // get a user data
 router.get('/user/get/:id',UserController.getUserData);
 // Delete a user
-router.delete('/user/:id', user_controller.deleteUser);
+router.delete('/user/:id', UserController.deleteUser);
 
 
 
