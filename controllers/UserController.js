@@ -6,19 +6,6 @@ var Users = mongoose.model('users');
 // =============================================
 // USER FUNCTIONS
 // =============================================
-// Helper function to be used in other functions
-// var assembleUser = function (req) {
-//     var user = {
-//         "id":req.body.username, // WE GETTING USERNAME BECAUSE FRONTEND SENDS USERNAME
-//         "password":req.body.password,
-//         "email":req.body.email,
-//         "fname":req.body.fname,
-//         "lname":req.body.lname,
-//         "points":req.body.points,
-//         "photo":req.body.photo,
-//     };
-//     return user;
-// };
 
 // FUNCTION TO CREATE USER
 var createUser = function(req, res){

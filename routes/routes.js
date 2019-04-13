@@ -14,19 +14,47 @@ router.get('/', function(req, res, next) {
 // Routes for USER FUNCTIONALITY
 // ========================================================================
 // Create user
-router.post('/user', UserController.createUser);
+router.post('/users', UserController.createUser);
 // Edit user
-router.put('/user/:id', UserController.editUser);
+router.put('/users/:id', UserController.editUser);
 // Get all users
-router.get('/user/all',UserController.findAllUsers);
+router.get('/users/all',UserController.findAllUsers);
 // Validate a user ID
-router.get('/user/checkID/:id', UserController.validateUserID);
+router.get('/users/checkID/:id', UserController.validateUserID);
 // Login and send user if ID and password is correct
-router.post('/user/login/:id', UserController.loginUser);
+router.post('/users/login/:id', UserController.loginUser);
 // get a user data
-router.get('/user/get/:id',UserController.getUserData);
+router.get('/users/get/:id',UserController.getUserData);
 // Delete a user
-router.delete('/user/:id', UserController.deleteUser);
+router.delete('/users/:id', UserController.deleteUser);
+
+
+
+// ========================================================================
+// Routes for MEDIC FUNCTIONALITY
+// ========================================================================
+// Create medic
+router.post('/medics', MedicController.createMedic);
+// Edit medic
+router.put('/medics/:id', MedicController.editMedic);
+// Get all medic
+router.get('/medics/all', MedicController.findAllMedics);
+// Validate a medic ID
+router.get('/medics/checkID/:id', MedicController.validateMedicID);
+// Login and send medic if ID and password is correct
+router.post('/medics/login/:id', MedicController.loginMedic);
+// get a user medic
+router.get('/medics/get/:id',MedicController.getMedicData);
+// Delete a medic
+router.delete('/medics/:id', MedicController.deleteMedic);
+
+// ========================================================================
+// Routes for ALERT FUNCTIONALITY
+// ========================================================================
+// Create alert
+router.post('/alerts', AlertController.createAlert);
+// Get all alerts
+router.get('/alerts/all', AlertController.getAllAlerts);
 
 
 
